@@ -1,0 +1,23 @@
+{
+  "name": "@app/database",
+  "version": "1.0.0",
+  "description": "Shared database configurations and entities",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/config": "^3.3.0",
+    "@nestjs/typeorm": "^10.0.2",
+    "typeorm": "^0.3.21",
+    "pg": "^8.14.0",
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "typescript": "^5.7.3"
+  }
+}

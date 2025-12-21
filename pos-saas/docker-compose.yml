@@ -1,0 +1,48 @@
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:17-alpine
+    container_name: pos-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: pos_saas
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - pos-network
+
+  # Redis for caching
+  redis:
+    image: redis:7.4-alpine
+    container_name: pos-redis
+    restart: unless-stopped
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_data:/data
+    networks:
+      - pos-network
+
+  # NATS for messaging
+  nats:
+    image: nats:2.10-alpine
+    container_name: pos-nats
+    restart: unless-stopped
+    ports:
+      - '4222:4222'  # Client connections
+      - '8222:8222'  # HTTP management
+      - '6222:6222'  # Cluster connections
+    networks:
+      - pos-network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  pos-network:
+    driver: bridge

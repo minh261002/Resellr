@@ -1,0 +1,19 @@
+{
+  "name": "@app/dto",
+  "version": "1.0.0",
+  "description": "Shared DTOs and interfaces",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "class-validator": "^0.14.1",
+    "class-transformer": "^0.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "typescript": "^5.7.3"
+  }
+}

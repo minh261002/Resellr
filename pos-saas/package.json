@@ -1,0 +1,37 @@
+{
+  "name": "pos-saas",
+  "version": "1.0.0",
+  "description": "POS SaaS Microservices Platform",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "scripts": {
+    "dev": "pnpm run --parallel dev",
+    "dev:gateway": "pnpm --filter api-gateway dev",
+    "dev:auth": "pnpm --filter auth-service dev",
+    "dev:org": "pnpm --filter org-service dev",
+    "dev:product": "pnpm --filter product-service dev",
+    "dev:sales": "pnpm --filter sales-service dev",
+    "build": "pnpm run --recursive build",
+    "start": "pnpm run --parallel start",
+    "lint": "pnpm run --recursive lint",
+    "test": "pnpm run --recursive test",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.20.0",
+    "eslint": "^9.18.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.15.4"
+}

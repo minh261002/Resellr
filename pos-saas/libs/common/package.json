@@ -1,0 +1,23 @@
+{
+  "name": "@app/common",
+  "version": "1.0.0",
+  "description": "Shared common utilities, decorators, guards, filters",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0",
+    "class-validator": "^0.14.1",
+    "class-transformer": "^0.5.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "typescript": "^5.7.3"
+  }
+}
